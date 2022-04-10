@@ -1,6 +1,6 @@
 import React from 'react';
 import SectionHeader from '../ui/SectionHeader';
-import PostItem from './PostItem';
+import PostList from './PostList';
 import styles from './PostListSection.module.css';
 
 function PostListSection () {
@@ -8,13 +8,7 @@ function PostListSection () {
       <section className={styles.post_list__section}>
           <SectionHeader />
           <div className={styles.post_list__wrap}>
-            <ul>
-                <PostItem />
-                <PostItem />
-                <PostItem />
-                <PostItem />
-                <PostItem />
-            </ul>
+            <PostList />
           </div>
       </section>
   );

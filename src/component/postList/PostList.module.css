@@ -1,0 +1,32 @@
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.2rem;
+    font-weight: 300;
+    gap: 0.1rem;
+}
+.pagination li {
+    width: 0.32rem;
+    height: 0.32rem;
+}
+.pagination a {
+    display: block;
+    width: inherit;
+    height: inherit;
+    cursor: pointer;
+    border-radius: 0.05rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.active a{
+    color: #7F24C5;
+    border: 2px solid;
+}
+
+.pagination :global(.disabled) a {
+    opacity: 0.5;
+    cursor: unset;
+}
