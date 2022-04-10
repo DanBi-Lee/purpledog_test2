@@ -2,6 +2,22 @@
     font-size: 0.20rem;
 }
 
-.category_list__list  li + li {
-    margin-top: 0.1rem;
+.category_list__list > li + li {
+    margin-top: 0.16rem;
+}
+.category_list__list > li {
+    background-color: #fff;
+    border-radius: 0.05rem;
+    border: 1px solid #ddd;
+}
+.category_list__list > li:hover{
+    color: #9b19ff;
+    border: 1px solid #9b19ff;
+}
+.category_list__list > li a {
+    display: block;
+    width: inherit;
+    height: inherit;
+    padding: 0.08rem 0.16rem;
+    text-transform: capitalize;
 }
