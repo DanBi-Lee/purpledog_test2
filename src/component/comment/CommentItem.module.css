@@ -1,0 +1,46 @@
+.comment {
+    background-color: #fff;
+    border-radius: 0.05rem;
+    border: 1px solid #ddd;
+    padding: 0.16rem;
+}
+
+.comment + .comment {
+    margin-top: 0.2rem;
+}
+
+.comment__header {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 0.16rem;
+    font-size: 0.16rem;
+}
+.comment__header .comment_date{
+    font-size: 0.14rem;
+    color: #999;
+    font-weight: 300;
+    margin-top: 0.04rem;
+}
+.comment_content {
+    padding: 0.16rem 0;
+}
+
+.comment__footer {
+    padding-top: 0.16rem;
+}
+.comment_button {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    font-size: 0.14rem;
+    cursor: pointer;
+}
+.comment_button.on {
+    color: #9b19ff;
+}
+.comment_button svg {
+    margin-right: 0.04rem;
+}
+.comment_button.on svg {
+    fill: #9b19ff;
+}

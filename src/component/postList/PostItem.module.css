@@ -1,0 +1,43 @@
+.post {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 0.16rem;
+    box-sizing: border-box;
+    border-radius: 0.05rem;
+    border: 1px solid #ddd;
+}
+.post + .post {
+    margin-top: 0.1rem;
+}
+
+.post_info {
+    display: flex;
+    font-size: 0.14rem;
+    color: #999;
+    font-weight: 300;
+}
+
+.post_info  p + p {
+    position: relative;
+    margin-left: 0.1rem;
+}
+.post_info  p + p::before {
+    position: absolute;
+    content: '';
+    display: block;
+    width: 0.02rem;
+    height: 0.02rem;
+    border-radius: 50%;
+    background-color: #999;
+    top: 50%;
+    left: -0.06rem;
+}
+.title__wrap {
+    margin-bottom: 0.04rem;
+}
+.title {
+    font-size: 0.18rem;
+}

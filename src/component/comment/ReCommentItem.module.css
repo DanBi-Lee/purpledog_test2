@@ -1,0 +1,17 @@
+.re_comment + .re_comment {
+    margin-top: 0.1rem;
+    border-top: 1px solid #ddd;
+    padding-top: 0.1rem;
+}
+.re_comment__header {
+    display: flex;
+    font-size: 0.14rem;
+    align-items: center;
+    margin-bottom: 0.08rem;
+}
+
+.re_comment__header .re_comment__date {
+    color: #666;
+    font-size: 0.12rem;
+    margin-left: 0.1rem;
+}

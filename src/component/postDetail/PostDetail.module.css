@@ -1,0 +1,32 @@
+.post_detail {
+    background-color: #fff;
+    border-radius: 0.05rem;
+    border: 1px solid #ddd;
+    padding: 0.16rem;
+    margin-bottom: 0.28rem;
+}
+
+.post__header {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 0.16rem;
+}
+
+.post__header .title__wrap {
+    font-size: 0.18rem;
+}
+.post__header .post_info {
+    display: flex;
+    font-size: 0.14rem;
+    color: #999;
+    font-weight: 300;
+    margin-top: 0.04rem;
+}
+.post__header .post_info p + p {
+    margin-left: 0.1rem;
+}
+
+.post_content {
+    padding: 0.16rem 0;
+    font-size: 0.16rem;
+    font-weight: 300;
+}
