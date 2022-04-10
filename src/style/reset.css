@@ -1,0 +1,36 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+:root {
+    font-size: 100px;
+}
+
+html, body, #root {
+    min-height: 100%;
+}
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 500;
+    color: #000000;
+    font-size: 16px;
+}
+
+.hidden {
+    display: block;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    left: -999999px;
+    opacity: 0;
+    z-index: -999999;
+}
+
+ul, ol, li {
+    list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 500;
+}
