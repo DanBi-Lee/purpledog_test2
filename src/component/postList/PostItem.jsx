@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { getPost } from '../../api/post';
 import useHTTP from '../../hooks/useHTTP';
 import useObserverLazyLoad from '../../hooks/useObserverLazyLoad';
+import SkeletonItem from '../skeletonUI/SkeletonItem';
 import styles from './PostItem.module.css';
 
 function PostItem({id}) {
@@ -10,6 +11,13 @@ function PostItem({id}) {
     const {state: postState, fetchData: fetchPost} = useHTTP(getPost);
 
     useObserverLazyLoad($post, fetchPost);
+
+    if(postState.isLoading){
+        return <SkeletonItem />;
+    }
+    if(postState.error){
+        return <SkeletonItem isError={true} />;
+    }
 
     let author, date, title;
     if(postState.data){

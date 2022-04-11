@@ -1,0 +1,26 @@
+.skeleton_list {
+    position: relative;
+}
+
+.skeleton_list__item {
+    width: 100%;
+    height: 0.8rem;
+    background-color: #ddd;
+    border-radius: 0.05rem;
+}
+
+.skeleton_list__item + .skeleton_list__item {
+    margin-top: 0.15rem;
+}
+
+.skeleton_error {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.2);
+}

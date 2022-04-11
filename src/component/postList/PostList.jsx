@@ -1,13 +1,10 @@
 import React, {useEffect} from 'react';
-import ReactPaginate from 'react-paginate';
 import PostItem from './PostItem';
-import styles from './PostList.module.css';
-import icon_arrow_next from '../../assets/icon_caret-right-solid.svg';
-import icon_arrow_prev from '../../assets/icon_caret-left-solid.svg';
 import { useDispatch, useSelector } from 'react-redux';
 import { getPostListThunk } from '../../modules/post';
 import usePaginationData from '../../hooks/usePaginationData';
 import Pagination from '../ui/Pagination';
+import SkeletonList from '../skeletonUI/SkeletonList';
 
 function PostList({categoryId}) {
     const dispatch = useDispatch();
@@ -19,6 +16,13 @@ function PostList({categoryId}) {
       }, [categoryId, dispatch]);
 
     const {pagination, handlePageClick} = usePaginationData(post_list.data);
+
+    if(post_list.isLoading){
+        return <SkeletonList />
+    }
+    if(post_list.error){
+        return <SkeletonList isError={true} />
+    }
 
     return (
         <>

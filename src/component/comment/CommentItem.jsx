@@ -5,6 +5,7 @@ import {ReactComponent as IconComment} from '../../assets/icon_comment.svg';
 import useHTTP from '../../hooks/useHTTP';
 import { getPost } from '../../api/post';
 import useObserverLazyLoad from '../../hooks/useObserverLazyLoad';
+import SkeletonItem from '../skeletonUI/SkeletonItem';
 
 function CommentItem({id}) {
     const [commentOpen, SetCommentOpen] = useState(false);
@@ -15,6 +16,13 @@ function CommentItem({id}) {
 
     const onCommentToggle = () => {
         SetCommentOpen(state=>!state);
+    }
+
+    if(commentState.isLoading){
+        return <SkeletonItem />
+    }
+    if(commentState.error){
+        return <SkeletonItem isError={true} />
     }
 
     let author, date, text, re_comment_list;
