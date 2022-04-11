@@ -1,10 +1,7 @@
 import React from 'react';
-import ReactPaginate from 'react-paginate';
 import usePaginationData from '../../hooks/usePaginationData';
 import CommentItem from './CommentItem';
 import styles from './CommentList.module.css';
-import icon_arrow_next from '../../assets/icon_caret-right-solid.svg';
-import icon_arrow_prev from '../../assets/icon_caret-left-solid.svg';
 import Pagination from '../ui/Pagination';
 
 function CommentList({post}) {
@@ -13,7 +10,11 @@ function CommentList({post}) {
     const { pagination, handlePageClick } =  usePaginationData(kids, {itemsPerPage:5});
 
     if(!kids){
-        return;
+        return (
+        <div className={styles.comment_list__wrap}>
+            <p className={styles.comment_list__title}>댓글이 없습니다.</p>
+        </div>
+        )
     }
     return (
         <div className={styles.comment_list__wrap}>
