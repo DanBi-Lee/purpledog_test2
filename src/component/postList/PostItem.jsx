@@ -1,23 +1,15 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { getPost } from '../../api/post';
 import useHTTP from '../../hooks/useHTTP';
-import { createCallback, createOptions } from '../../util/lazy_loading-observer';
+import useObserverLazyLoad from '../../hooks/useObserverLazyLoad';
 import styles from './PostItem.module.css';
 
 function PostItem({id}) {
     const $post = useRef();
     const {state: postState, fetchData: fetchPost} = useHTTP(getPost);
-    
 
-    useEffect(() => {
-        const getAndsetPostData = async ($element) => {
-            const {id} = $element.dataset;
-            fetchPost(id);
-        }
-        const observer = new IntersectionObserver(createCallback(getAndsetPostData), createOptions());
-        observer.observe($post.current);
-    }, [fetchPost]);
+    useObserverLazyLoad($post, fetchPost);
 
     let author, date, title;
     if(postState.data){
