@@ -22,6 +22,8 @@
 }
 .comment_content {
     padding: 0.16rem 0;
+    font-weight: 300;
+    color: #333;
 }
 
 .comment__footer {
