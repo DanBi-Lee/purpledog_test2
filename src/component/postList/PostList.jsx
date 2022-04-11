@@ -7,6 +7,7 @@ import icon_arrow_prev from '../../assets/icon_caret-left-solid.svg';
 import { useDispatch, useSelector } from 'react-redux';
 import { getPostListThunk } from '../../modules/post';
 import usePaginationData from '../../hooks/usePaginationData';
+import Pagination from '../ui/Pagination';
 
 function PostList({categoryId}) {
     const dispatch = useDispatch();
@@ -28,21 +29,7 @@ function PostList({categoryId}) {
             )))
             }
             </ul>
-            <ReactPaginate
-                previousLabel={<img width={16} src={icon_arrow_prev} alt="이전" />}
-                nextLabel={<img width={16} src={icon_arrow_next} alt="다음" />}
-                breakLabel={'...'}
-                pageCount={pagination.pageCount}
-                pageRangeDisplayed={5}
-                onPageChange={handlePageClick}
-                containerClassName={styles.pagination}
-                activeClassName={styles.active}
-                renderOnZeroPageCount = {()=>{
-                    return (
-                        <div>글이 없습니다.</div>
-                    )
-                }}
-                />
+            <Pagination pagination={pagination} handlePageClick={handlePageClick}  />
         </>
     );
 }
