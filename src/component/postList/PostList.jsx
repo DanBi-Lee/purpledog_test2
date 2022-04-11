@@ -4,22 +4,34 @@ import PostItem from './PostItem';
 import styles from './PostList.module.css';
 import icon_arrow_next from '../../assets/icon_caret-right-solid.svg';
 import icon_arrow_prev from '../../assets/icon_caret-left-solid.svg';
-
-const datas = [
-];
+import { useParams } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { getPostListThunk } from '../../modules/post';
 
 function PostList() {
+    const {categoryId} = useParams();
+    const post_list = useSelector(state=>state.post.post_list);
+    const postList_dispatch = useDispatch();
+
     const [pagination,
-        setPagination] = useState({data: datas, currentItems: [], itemsPerPage: 15, pageCount: 0, itemOffset: 0});
+        setPagination] = useState({data: [], currentItems: [], itemsPerPage: 10, pageCount: 0, itemOffset: 0});
+
+    useEffect(()=>{
+        postList_dispatch(getPostListThunk(categoryId));
+    }, [categoryId, postList_dispatch]);
+
     useEffect(() => {
+        if(!post_list.data){
+            return;
+        }
         setPagination((state) => ({
             ...state,
-            pageCount: Math.ceil(state.data.length / state.itemsPerPage),
-            currentItems: state
-                .data
+            data: post_list.data,
+            pageCount: Math.ceil(post_list.data.length / state.itemsPerPage),
+            currentItems: post_list.data
                 .slice(pagination.itemOffset, pagination.itemOffset + pagination.itemsPerPage)
         }))
-    }, [pagination.itemsPerPage, pagination.itemOffset]);
+    }, [pagination.itemOffset, pagination.itemsPerPage, post_list.data]);
 
     const handlePageClick = event => {
         const selected = event.selected;
