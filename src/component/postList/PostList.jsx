@@ -48,7 +48,7 @@ function PostList() {
             <ul>
             {
             pagination.currentItems && pagination.currentItems.map(((item, index) => (
-                <PostItem key={item} text={item} />
+                <PostItem key={item} id={item} />
             )))
             }
             </ul>
