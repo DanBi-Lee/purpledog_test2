@@ -10,7 +10,7 @@ function PostListSection () {
       <section className={styles.post_list__section}>
           <SectionHeader categoryId={categoryId} />
           <div className={styles.post_list__wrap}>
-            <PostList />
+            <PostList categoryId={categoryId} />
           </div>
       </section>
   );
