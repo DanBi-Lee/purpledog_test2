@@ -17,12 +17,12 @@ function CommentItem({id}) {
         SetCommentOpen(state=>!state);
     }
 
-    let author, date, text, re_comment;
+    let author, date, text, re_comment_list;
     if(commentState.data){
         author = commentState.data.by ;
         date = commentState.data.time ;
         text = commentState.data.text;
-        re_comment = commentState.data.kids;
+        re_comment_list = commentState.data.kids;
     }
 
     return (
@@ -38,13 +38,13 @@ function CommentItem({id}) {
             <div className={styles.comment_content} dangerouslySetInnerHTML={{__html: text}}  />
             <footer className={styles.comment__footer}>
                 <div className={styles.button__wrap}>
-                    <button  className={`${styles.comment_button} ${commentOpen? styles.on : ''} ${re_comment||styles.disabled}`} onClick={re_comment&& onCommentToggle}>
+                    <button  className={`${styles.comment_button} ${commentOpen? styles.on : ''} ${re_comment_list||styles.disabled}`} onClick={re_comment_list&& onCommentToggle}>
                         <IconComment width="24"/>
-                        <span>댓글 {re_comment?re_comment.length: 0}개</span>
+                        <span>댓글 {re_comment_list?re_comment_list.length: 0}개</span>
                     </button>
                 </div>
                 {
-                    commentOpen && <ReCommentList/>
+                    commentOpen && <ReCommentList re_comment_list={re_comment_list} />
                 }
             </footer>
         </article>
