@@ -40,9 +40,16 @@
 .comment_button.on {
     color: #9b19ff;
 }
+.comment_button.disabled {
+    color: #999;
+    cursor: unset;
+}
 .comment_button svg {
     margin-right: 0.04rem;
 }
 .comment_button.on svg {
     fill: #9b19ff;
+}
+.comment_button.disabled svg {
+    fill: #999;
 }
