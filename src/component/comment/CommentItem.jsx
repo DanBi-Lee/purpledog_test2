@@ -3,7 +3,7 @@ import ReCommentList from './ReCommentList';
 import styles from './CommentItem.module.css';
 import {ReactComponent as IconComment} from '../../assets/icon_comment.svg';
 
-function CommentItem() {
+function CommentItem({id}) {
     const [commentOpen, SetCommentOpen] = useState(false);
 
     const onCommentToggle = () => {
@@ -11,7 +11,7 @@ function CommentItem() {
     }
 
     return (
-        <article className={styles.comment}>
+        <article className={styles.comment} data-id={id}>
             <header className={styles.comment__header}>
                 <p className={styles.comment_author}>
                     작성자

@@ -74,7 +74,7 @@ const postReducer = (state = initialState, action) => {
       return {
         ...state,
         post: {
-          data: state.data,
+          data: state.post.data,
           isLoading: true,
           error: null,
         },
@@ -92,7 +92,7 @@ const postReducer = (state = initialState, action) => {
       return {
         ...state,
         post: {
-          data: state.data,
+          data: state.post.data,
           isLoading: false,
           error: action.error,
         },

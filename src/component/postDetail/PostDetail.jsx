@@ -1,20 +1,24 @@
 import React from 'react';
 import styles from './PostDetail.module.css';
 
-function PostDetail() {
+function PostDetail({post}) {
+    const {title, by:author, time:date, url} = post;
     return (
         <article className={styles.post_detail}>
             <header className={styles.post__header}>
                 <div className={styles.title__wrap}>
-                    <p>제목</p>
+                    <p>{title}</p>
                 </div>
                 <div className={styles.post_info}>
-                    <p>글쓴이</p>
-                    <p>날짜</p>
+                    <p>{author}</p>
+                    <p>{new Date(date*1000).toLocaleString()}</p>
                 </div>
             </header>
             <div className={styles.post_content}>
-                글 본문
+                {
+                    url &&
+                    <a href={url}>{url}</a>
+                }
             </div>
         </article>
     );
