@@ -12,7 +12,7 @@ const store = createStore(rootReducer, applyMiddleware(reduxThunk));
 
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/purpledog_test2">
       <Provider store={store}>
         <App />
       </Provider>
