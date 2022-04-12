@@ -1,9 +1,11 @@
 import React from 'react';
-import { convert_to_date_string } from '../../util/convert_to_date_string';
+import {convert_to_date_string} from '../../util/convert_to_date_string';
+import PostContent from './PostContent';
 import styles from './PostDetail.module.css';
 
 function PostDetail({post}) {
-    const {title, by:author, time, url} = post;
+    const {title, by: author, time} = post;
+    
     return (
         <article className={styles.post_detail}>
             <header className={styles.post__header}>
@@ -15,12 +17,7 @@ function PostDetail({post}) {
                     <p>{convert_to_date_string(time)}</p>
                 </div>
             </header>
-            <div className={styles.post_content}>
-                {
-                    url &&
-                    <a href={url}>{url}</a>
-                }
-            </div>
+            <PostContent post={post} />
         </article>
     );
 }

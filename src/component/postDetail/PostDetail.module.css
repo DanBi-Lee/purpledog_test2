@@ -24,9 +24,3 @@
 .post__header .post_info p + p {
     margin-left: 0.1rem;
 }
-
-.post_content {
-    padding: 0.16rem 0;
-    font-size: 0.16rem;
-    font-weight: 300;
-}

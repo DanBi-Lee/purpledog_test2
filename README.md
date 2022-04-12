@@ -79,7 +79,7 @@
 
   - `useParam`을 사용해 글 id(`postId`)을 기준으로 글 API를 요청할 수 있도록 구현했습니다.
 
-    - [[#5] 포스트 상세 페이지 데이터 연결](https://github.com/DanBi-Lee/purpledog_test2/commit/e9ba8cc7eb602f55b0b75c7476b72fd1e6d2d589)
+    - [[#5] 포스트 상세 페이지 데이터 연결
 
   - 글 상세 페이지 안의 댓글(1depth)에도 페이지네이션을 적용했습니다.
 
