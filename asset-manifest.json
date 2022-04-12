@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/purpledog_test2/static/css/main.571c6940.css",
-    "main.js": "/purpledog_test2/static/js/main.07241344.js",
+    "main.css": "/purpledog_test2/static/css/main.89097255.css",
+    "main.js": "/purpledog_test2/static/js/main.1c3613c4.js",
     "static/media/icon_comment.svg": "/purpledog_test2/static/media/icon_comment.9be004070dd0b4fcb73859cb101cd5d7.svg",
     "index.html": "/purpledog_test2/index.html",
     "static/media/icon_caret-right-solid.svg": "/purpledog_test2/static/media/icon_caret-right-solid.1758efec992636b5e67b8c9c87f75d83.svg",
     "static/media/icon_caret-left-solid.svg": "/purpledog_test2/static/media/icon_caret-left-solid.20848704d0f2e10edcbd6e3b9857cbd2.svg",
-    "main.571c6940.css.map": "/purpledog_test2/static/css/main.571c6940.css.map",
-    "main.07241344.js.map": "/purpledog_test2/static/js/main.07241344.js.map"
+    "main.89097255.css.map": "/purpledog_test2/static/css/main.89097255.css.map",
+    "main.1c3613c4.js.map": "/purpledog_test2/static/js/main.1c3613c4.js.map"
   },
   "entrypoints": [
-    "static/css/main.571c6940.css",
-    "static/js/main.07241344.js"
+    "static/css/main.89097255.css",
+    "static/js/main.1c3613c4.js"
   ]
 }
