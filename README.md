@@ -10,6 +10,37 @@
 
 1. `npm install` : 프로젝트 종속성 설치
 2. `npm run start` : 개발모드에서 앱 실행
+3. 혹은 https://danbi-lee.github.io/purpledog_test2/ 링크를 통해 배포된 프로젝트를 확인하실 수 있습니다.
+
+## 폴더 구조
+
+```
+📦src
+ ┣ 📂api → API 요청 파일
+ ┣ 📂assets → 이미지 파일
+ ┣ 📂component → 컴포넌트
+ ┃ ┣ 📂categoryList → 카테고리 리스트 관련 컴포넌트
+ ┃ ┣ 📂comment → 댓글 관련 컴포넌트
+ ┃ ┣ 📂notfound → 404페이지 관련 컴포넌트
+ ┃ ┣ 📂postDetail → 포스트 상세 관련 컴포넌트
+ ┃ ┣ 📂postList → 포스트 목록 관련 컴포넌트
+ ┃ ┣ 📂skeletonUI → 로딩중 띄울 스켈레톤 ui 컴포넌트
+ ┃ ┗ 📂ui → 범용으로 사용할 수 있는 컴포넌트
+ ┣ 📂data
+ ┃ ┗ 📜category_list.js → 카테고리 리스트
+ ┣ 📂hooks → 커스텀 훅
+ ┣ 📂layout → 템플릿 기능을 하는 컴포넌트
+ ┣ 📂modules → 리덕스 모듈
+ ┣ 📂pages
+ ┃ ┣ 📜CategoryListPage.jsx → 카테고리 리스트 (`/`)
+ ┃ ┣ 📜NotFoundPage.jsx → 404 페이지
+ ┃ ┣ 📜PostDetailPage.jsx → 포스트 상세 (`/post/:postId`)
+ ┃ ┗ 📜PostListPage.jsx → 포스트 목록 (`/category/:categoryId`)
+ ┣ 📂style
+ ┣ 📂util
+ ┣ 📜App.js  → 라우터 적용
+ ┗ 📜index.js
+```
 
 ## 구현사항 소개
 
@@ -27,7 +58,7 @@
 
 - 글 목록 페이지 (`/category/:categoryId`)
 
-  - `useParam`을 사용해 카테고리 이름을 사용하여 글 목록 API를 요청할 수 있도록 구현했습니다.
+  - `useParam`을 사용해 카테고리 이름(`categoryId`)을 기준으로 글 목록 API를 요청할 수 있도록 구현했습니다.
 
   - 응답으로 받은 글 목록 배열을 페이지로 나누어서 렌더링했습니다.
 
@@ -41,12 +72,12 @@
 
   - 포스트 목록의 각 포스트 정보 불러오기
 
-    - 응답 받은 글 목록 배열에는 해당 글의 id만 존재하기 때문에, 다시 해당 id로 글 목록에 표시할 데이터(글 제목, 작성자, 작성일 등)을 얻기 위해 글마다 각각 API요청을 해야했습니다. 한꺼번에 호출하는 횟수를 줄이기 위해 InteractionObserver API를 활용해 lazy loading을 구현했습니다.
+    - 응답받은 글 목록 배열에는 해당 글의 id만 존재하기 때문에, 글 목록에 표시할 데이터(글 제목, 작성자, 작성일 등)를 얻기 위해 다시 해당 id를 이용하여 글마다 각각 API 요청을 하도록 설계했습니다. 여기서 발생하는 호출 횟수를 줄일 수 있도록 InteractionObserver API를 활용해 lazy loading을 구현했습니다.
       - [[#3] 포스트 리스트 데이터 연결](https://github.com/DanBi-Lee/purpledog_test2/commit/fd1fee67fa2d6a5919475da85d9844351c1487a0)
 
 - 글 상세 페이지`(/post/:postId`)
 
-  - `useParam`을 사용해 카테고리 이름을 사용하여 글 목록 API를 요청할 수 있도록 구현했습니다.
+  - `useParam`을 사용해 글 id(`postId`)을 기준으로 글 API를 요청할 수 있도록 구현했습니다.
 
     - [[#5] 포스트 상세 페이지 데이터 연결](https://github.com/DanBi-Lee/purpledog_test2/commit/e9ba8cc7eb602f55b0b75c7476b72fd1e6d2d589)
 
