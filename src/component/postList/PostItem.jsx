@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { getPost } from '../../api/post';
 import useHTTP from '../../hooks/useHTTP';
 import useObserverLazyLoad from '../../hooks/useObserverLazyLoad';
+import { convert_to_date_string } from '../../util/convert_to_date_string';
 import SkeletonItem from '../skeletonUI/SkeletonItem';
 import styles from './PostItem.module.css';
 
@@ -19,10 +20,10 @@ function PostItem({id}) {
         return <SkeletonItem isError={true} />;
     }
 
-    let author, date, title;
+    let author, time, title;
     if(postState.data){
         author = postState.data.by ;
-        date = postState.data.time ;
+        time = postState.data.time ;
         title = postState.data.title;
     }
     
@@ -33,7 +34,7 @@ function PostItem({id}) {
                     <p className={styles.title}>{title}</p>
                 </div>
                 <div className={styles.post_info}>
-                    <p className={styles.date}>{date}</p>
+                    <p className={styles.date}>{convert_to_date_string(time)}</p>
                     <p className={styles.author}>{author}</p>
                 </div>
             </Link>

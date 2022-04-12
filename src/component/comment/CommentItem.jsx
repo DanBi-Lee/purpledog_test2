@@ -6,6 +6,7 @@ import useHTTP from '../../hooks/useHTTP';
 import { getPost } from '../../api/post';
 import useObserverLazyLoad from '../../hooks/useObserverLazyLoad';
 import SkeletonItem from '../skeletonUI/SkeletonItem';
+import { convert_to_date_string } from '../../util/convert_to_date_string';
 
 function CommentItem({id}) {
     const [commentOpen, SetCommentOpen] = useState(false);
@@ -25,10 +26,10 @@ function CommentItem({id}) {
         return <SkeletonItem isError={true} />
     }
 
-    let author, date, text, re_comment_list;
+    let author, time, text, re_comment_list;
     if(commentState.data){
         author = commentState.data.by ;
-        date = commentState.data.time ;
+        time = commentState.data.time ;
         text = commentState.data.text;
         re_comment_list = commentState.data.kids;
     }
@@ -40,7 +41,7 @@ function CommentItem({id}) {
                     {author}
                 </p>
                 <p className={styles.comment_date}>
-                    {date}
+                    {convert_to_date_string(time)}
                 </p>
             </header>
             <div className={styles.comment_content} dangerouslySetInnerHTML={{__html: text}}  />

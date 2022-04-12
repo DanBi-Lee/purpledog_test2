@@ -1,8 +1,9 @@
 import React from 'react';
+import { convert_to_date_string } from '../../util/convert_to_date_string';
 import styles from './PostDetail.module.css';
 
 function PostDetail({post}) {
-    const {title, by:author, time:date, url} = post;
+    const {title, by:author, time, url} = post;
     return (
         <article className={styles.post_detail}>
             <header className={styles.post__header}>
@@ -11,7 +12,7 @@ function PostDetail({post}) {
                 </div>
                 <div className={styles.post_info}>
                     <p>{author}</p>
-                    <p>{new Date(date*1000).toLocaleString()}</p>
+                    <p>{convert_to_date_string(time)}</p>
                 </div>
             </header>
             <div className={styles.post_content}>
