@@ -1,0 +1,27 @@
+.not_found__section {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+.not_found__section h2 {
+    font-size: 0.32rem;
+}
+.not_found__section h2 + p {
+    font-size: 0.18rem;
+    margin-top: 0.04rem;
+    color: #666;
+}
+.action {
+    margin-top: 0.2rem;
+}
+.link {
+    display: block;
+    max-width: 1rem;
+    background-color: #7F24C5;
+    padding: 0.15rem;
+    margin: 0 auto;
+    border-radius: 0.15rem;
+    color: #fff;
+}
